@@ -26,7 +26,7 @@ app.get('/beers', (request, response) => {
   punkAPI
     .getBeers()
     .then(beersFromApi => {
-      console.log('Beers from the database: ', beersFromApi)
+      console.log('Beers from the database: ', beersFromApi);
       response.render('beers', { beers: beersFromApi });
     })
     .catch(error => console.log(error));
@@ -37,8 +37,8 @@ app.get('/random-beers', (request, response) => {
   punkAPI
     .getRandom()
     .then(randomBeerFromApi => {
-      console.log('Random Beer: ', randomBeerFromApi)
-      response.render('random-beers', { beer: randomBeerFromApi }),  
+      console.log('Random Beer: ', randomBeerFromApi);
+      response.render('random-beer', { randomBeer: randomBeerFromApi[0] });
     })
     .catch(error => console.log(error));
 });
